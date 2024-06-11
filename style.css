@@ -60,9 +60,10 @@ body{
 }
 
 .navbar .logo a {
-    color: white;
+    color: #cf7878;
     font-size: 35px;
     font-weight: 600;
+    
 }
 
 .navbar .logo a span {
@@ -71,7 +72,7 @@ body{
 }
 
 .navbar.sticky .logo a span {
-    color: white;
+    color: #cf7878;
 }
 .navbar .menu ul{
     
@@ -88,7 +89,7 @@ body{
 
 .navbar .menu li a {
  
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s;
@@ -176,7 +177,7 @@ body{
     display: flex;
     align-items: right; /* Center image vertically */
     justify-content: right; /* Center image horizontally */
-    margin-right: -450px; /* Adjust as needed */
+    margin-right: -650px; /* Adjust as needed */
     flex: 0 0 auto; /* Ensure it doesn’t shrink or grow */
     height:auto;
     margin-top: -250px; /* Move image upward */
@@ -235,46 +236,56 @@ section .title::after{
     transform: translateX(-50%);
 }
 /* about section styling */
-.about{
+
+.about {
     background: url("images/white.jpg");
     background-size: 2000px;
 }
-.about .title::after{
+.about .title::after {
     content: "Who I am";
 }
-.about .about-content .left{
-   width: 45%;
+.about .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.about .about-content .left img{
-    height: 370px;
-    width: 370px;
+.about .about-content .left {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right within the left section */
+}
+.about .about-content .left img {
+    height: 450px; /* Increased image size */
+    width: 450px;
     object-fit: cover;
     border-radius: 6px;
     transition: all 0.3s ease;
+    margin-right: 20px; /* Add margin to create gap between image and text */
 }
-.about .about-content .left img:hover{
+.about .about-content .left img:hover {
     transform: scale(1.05);
 }
-.about .about-content .right{
-    width: 55%;
- }
- .about .about-content .right .text{
+.about .about-content .right {
+    width: 65%;
+    padding-left: 5%;
+}
+.about .about-content .right .text {
     color: black;
     font-size: 25px;
     font-weight: 600;
-    margin-bottom: 10px;
- }
- .about .about-content .right .text span{
-     color: #cf7878;
- }
- .about .about-content .right .paragraph{
-     color: black;
-     font-size: 18px;
- }
- .about .about-content .right .p{
-     text-align: justify;
- }
- .about .about-content .right a{
+    margin-bottom: 15px;
+}
+.about .about-content .right .text span {
+    color: #cf7878;
+}
+.about .about-content .right .paragraph {
+    color: black;
+    font-size: 18px;
+}
+.about .about-content .right .p {
+    text-align: justify;
+}
+.about .about-content .right a {
     display: inline-block;
     background: none;
     color: #cf7878;
@@ -285,123 +296,405 @@ section .title::after{
     border-radius: 6px;
     border: 2px solid #cf7878;
     transition: all 0.3s ease;
- }
- .about .about-content .right a:hover{
-     color: black;
-     background:none;
- }
+}
+.about .about-content .right a:hover {
+    color: black;
+    background: none;
+}
+
+/* New CSS for education section */
+.about-experience .section-heading {
+    font-size: 3em;
+    margin-bottom: 20px;
+    position: relative;
+    left: -300px; /* Adjust this as needed */
+    box-sizing: border-box;
+}
+
+.about-experience .section-heading::before {
+    content: '';
+    width: 150px;
+    height: 3px;
+    background-color: #cf7878;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.about-experience_timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    width: 1700px; /* Adjust the width as needed */
+    left: -300px; /* Adjust this as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+}
+
+.timeline_icon-wrap {
+    position: absolute;
+    left: 50px;
+    top: -150px;
+}
+
+.timeline_icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #cf7878;
+    border-radius: 50%;
+    font-size: 50px; /* Adjust the font size of the icon */
+    text-align: center; /* Center the icon horizontally */
+    line-height: 100px; /* Center the icon vertically */
+}
+
+.timeline_block {
+    background-color: white;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* Add some space between timeline blocks */
+}
+
+.timeline_bullet {
+    display: inline-block;
+    background-color: #cf7878;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+.timeline_header {
+    margin-bottom: 10px;
+}
+
+.timeline_timeframe,
+.item-title,
+.timeline_header h5 {
+    display: block; /* Ensure these elements are block elements */
+    margin: 5px 0; /* Add some margin for spacing */
+}
+
+.timeline_timeframe {
+    font-size: 1.5em;
+    color: #999;
+}
+
+.timeline_desc {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.timeline_image {
+    width: 100%;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.timeline_image:hover {
+    transform: scale(1.05);
+}
+
  
  /* services styling */
- .services{
-     color: white;
-     background:black;
-     background: url("images/background.jpg");
-     background-size: 2000px;
- }
- .services .title::before{
+ .services {
+    color: white;
+    background: black;
+    background: url("images/background.jpg");
+    background-size: 2000px;
+}
+.services .title::before {
     background: white;
 }
- .services .title::after{
-     background: black;
-     content: "What I provide";
- }
- .services .serv-content .card{
-     width: calc(33% - 20px);
-     text-align:center;
-     background:none;
-     border-radius: 6px;
-     padding: 20px 25px;
-     cursor: pointer;
-     transition: all 0.3s ease;
- }
- .services .serv-content .card:hover {
-     background:  none;
- }
- .services .serv-content .card .box{
-      transition: all 0.3s ease;
- }
- .services .serv-content .card:hover .box{
-      transform: scale(1.05);
+.services .title::after {
+    background: black;
+    content: "What I provide";
 }
- .services .serv-content .card i{
-     font-size: 50px; 
-     color: #cf7878;
-     transition:color 0.3s ease;
- }
- .services .serv-content .card:hover i{
+.services .serv-content {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    flex-wrap: wrap; /* Ensure items wrap if the container is too small */
+    gap: 40px; /* Add gap between items */
+}
+
+
+.services .serv-content .card {
+    width: calc(33% - 20px);
+    text-align: center;
+    background: none;
+    border-radius: 6px;
+   
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover {
+    background: none;
+}
+.services .serv-content .card .box {
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box {
+    transform: scale(1.05);
+}
+.services .serv-content .card i {
+    font-size: 50px; 
+    color: #cf7878;
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i {
     color: #cf7878;
 }
- .services .serv-content .card .text{
-     font-size: 25px;
-     font-weight: 500;
-     margin: 10px 0 7px 0;
- }
+.services .serv-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.services .serv-content .card .project-img {
+    width: 100%;
+    border-radius: 16px;
+    margin: 10px 0;
+}
+.services .serv-content .card .project-name {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+
+/* Existing styles */
+
+.project-detail {
+    color: white;
+    background: black;
+    padding: 130px;
+    text-align: center;
+}
+
+.project-header {
+    margin-bottom: 20px;
+    color: #cf1767 ;
+}
+
+.project-logo {
+    width: 685px;
+    margin-top: 10px;
+}
+
+.project-name {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.project-content {
+    margin-top: 20px;
+}
+
+.project-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.project-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-content ul li {
+    margin-bottom: 10px;
+}
+
+.project-content ul li a {
+    color: #cf1767;
+    text-decoration: none;
+}
+
+.project-content ul li a:hover {
+    text-decoration: underline;
+}
+
 
 /* Skills Section Styling */
 
-.skills{
+.skills {
     background: url("images/white.jpg");
     background-size: 2000px;
 }
 
-.skills .title::after{
+.skills .title::after {
     content: "What I Know";
 }
 
-.skills .skills-content .column{
+.skills .skills-content .column {
     width: calc(50% - 30px);
 }
 
-.skills .skills-content .left .text{
-   color: white;
-   font-size: 25px;
-   font-weight: 600;
-   margin-bottom: 10px;
+.skills .skills-content .left .text {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: -210px;
 }
-.skills .skills-content .left .paragraph-2{
-    font-size: 17px;
-    color: white;
+
+.skills .skills-content .left .paragraph-2 {
+    font-size: 20px;
+    color: black;
+    margin-left: -210px;
 }
-.skills .skills-content .left .p{
+
+.skills .skills-content .left .p {
     text-align: justify;
- }
- .skills .skills-content .left a{
+}
+
+.skills .skills-content .left a {
     display: inline-block;
     background: none;
     color: #cf7878;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 30px;
+    margin-left: -210px;
+    font-size: 22px;
     font-weight: 500;
     padding: 5px 30px;
     border-radius: 6px;
     border: 2px solid #cf7878;
     transition: all 0.3s ease;
- }
- .skills .skills-content .left a:hover{
-     color:white;
- }
- .skills .skills-content .right .icons{
-     font-size: 50px;
-     color: white;
-     display: flex;
-     margin-bottom: 5px;
-     align-items: center;
-     justify-content: space-between;
-     transition: all 0.3s ease;
-     padding-top: 20px;
- }
- .skills .skills-content .right .icons img{
+}
+
+.skills .skills-content .left a:hover {
+    color: black;
+}
+
+.skills .skills-content .right .icons {
+    font-size: 50px;
+    color: #cf7878;
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
     transition: all 0.3s ease;
-    color: white;
- }
- .skills .skills-content .right .icons img:hover{
+    padding-top: 20px;
+}
+
+.skills .skills-content .right .icons img {
+    width: 530px;
+    height: 30px;
+    transition: all 0.3s ease;
+    color: #cf7878;
+}
+
+.skills .skills-content .right .icons img:hover {
     transform: scale(1.20);
     border-radius: 10px;
- }
- #css-icon:hover{
+}
+
+#css-icon:hover {
     -webkit-filter: drop-shadow(0 0 10px #264de4);
     filter: drop-shadow(0 0 10px #264de4);
- }
+}
+
+/* Services Section CSS */
+.s-services {
+
+    padding: 20px 0;
+    position: relative;
+}
+
+.s-services .shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+
+.s-services .heading-block.center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.s-services .heading-block.center .title {
+    font-size: 36px;
+    color: #cf7878;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.s-services .heading-block.center .title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #cf7878;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item-service {
+    flex: 0 0 30%;
+    background: #f5b0b0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.item-service .item-title {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.item-service p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.item-service ul {
+    list-style: none;
+    padding: 0;
+}
+
+.item-service ul li {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+
+.item-service ul li::before {
+    content: '\2022'; /* Bullet character */
+    color: black; /* Color of the bullet */
+    display: inline-block;
+    width: 2em;
+    margin-left: 1em; /* Align bullet with text */
+}
+
+  /*
  #js-icon:hover{
     -webkit-filter: drop-shadow(0 0 10px #f0db4f);
     filter: drop-shadow(0 0 10px #f0db4f);
@@ -430,8 +723,10 @@ section .title::after{
     -webkit-filter: drop-shadow(0 0 10px #0080ff);
     filter: drop-shadow(0 0 10px #0080ff);
 }
+*/
+ /*list of skills*/
 
- 
+
 /* .skills .skills-content .right .bars{
     color: white;
  margin-bottom: 15px;
@@ -580,30 +875,30 @@ section .title::after{
 footer{
     background: url("images/white.jpg") ;
     padding: 20px 23px;
-    color: white;
+    color: black;
 }
 
 footer .text-center {
     text-align: center !important; }
 
 footer span a{
-    color: #cf7878;
+    color: black;
     transition: color 0.3s ease;
 }
 footer i{
     padding-left: 10px;
-    font-size: 25px;;
-    color: #cf7878;
+    font-size: 55px;;
+    color: black;
     transition: color 0.3s ease;
 }
 footer span a:hover{
-    color: white;
+    color: #cf7878;
 }
 footer i{
-    font-size: 27px;
+    font-size: 40px;
 }
 footer i:hover{
-    color: white;
+    color:#cf7878;
 }
 
 /* CSS for scroll to top button */
@@ -615,9 +910,9 @@ footer i:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #124429;
+    background: #cf7878;
     box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
-    color: #cf7878;
+    color: black;
     border: none;
     outline: none;
     cursor: pointer;
@@ -625,7 +920,7 @@ footer i:hover{
 }
 
 #btnScrollToTop:active, #btnScrollToTop:hover{
-    background: #124429;
+    background:#cf7878;
     box-shadow: 0px 0px 20px black;
 }
 
@@ -638,8 +933,8 @@ footer i:hover{
   }
 
   .progress-bar {
-    height: 4px;
-    background: rgb(87,142,84);
+    height: 6px;
+    background: #cf7878;
   }
   
   @-webkit-keyframes glow {
@@ -664,12 +959,13 @@ footer i:hover{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(87,142,84); 
+    width: 6px;
+    background: #cf7878; 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(87,142,84); 
+    background: #cf7878; 
   }
 
 /* response media query starts */
